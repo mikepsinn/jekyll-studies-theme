@@ -1,0 +1,8 @@
+{% assign sorted = site.tags[include.taxonomy] %}
+{% if sorted %}
+  {% assign sorted = sorted | sort:"sorting_score" | reverse %}
+{% endif %}
+
+{%- for entry in sorted -%}
+  {% include entry.html %}
+{%- endfor -%}

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   sidebar-ad
+   ========================================================================== */
+
+.sidebar-ad {
+  display: none;
+
+  @include breakpoint($large) {
+    display: inline-block;
+    width: 160px;
+    height: 600px
+  }
+}
+
+.sidebar-vertical-share {
+  display: none;
+
+  @include breakpoint($large) {
+    display: inline-block;
+  }
+}
+
+.sidebar-horizontal-share {
+  display: block;
+
+  @include breakpoint($large) {
+    display: none;;
+  }
+}

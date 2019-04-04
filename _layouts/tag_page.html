@@ -1,0 +1,24 @@
+---
+layout: page
+---
+<h1 class="entry-title p-name">{{ page.tag }} Studies</h1>
+<hr>
+<!-- <ul>
+{% for post in page.posts %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} | Tags: {{ post | tags }})</li>
+{% endfor %}
+</ul>
+
+<div id="tag-cloud">
+  {{ site | tag_cloud }}
+</div> -->
+
+<div class="entries-list">
+    {% assign sorted = page.posts %}
+    {% if sorted %}
+      {% assign sorted = sorted | sort:"sorting_score" | reverse %}
+    {% endif %}
+    {%- for entry in sorted -%}
+        {% include entry.html %}
+    {%- endfor -%}
+</div>

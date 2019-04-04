@@ -1,0 +1,10 @@
+{% assign posts_limit = page.posts_limit | default: 10 %}
+
+{% assign sorted = site.posts %}
+{% if site.posts %}
+  {% assign sorted = site.posts | sort:"sorting_score" | reverse %}
+{% endif %}
+
+{%- for entry in sorted limit: posts_limit -%}
+  {% include entry.html %}
+{%- endfor -%}

@@ -1,0 +1,12 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Note: More specific redirects might need to be placed above more general ones?
+
+# For some reason Google indexed a bunch of stuff with personal-studies in path
+/personal-studies/* https://studies.quantimo.do/:splat 301!
+/global-studies/* https://studies.quantimo.do/:splat 301!
+
+# Redirect default Netlify subdomain to primary domain
+# For SEO reasons redirect the default Netlify subdomain to the primary domain
+https://qm-studies.netlify.com/* https://studies.quantimo.do/:splat 301!
+https://master--qm-studies.netlify.com/* https://studies.quantimo.do/:splat 301!

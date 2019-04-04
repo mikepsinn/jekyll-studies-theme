@@ -1,0 +1,100 @@
+---
+title: The Journal of Citizen Science
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    comments: true
+    share: true
+email: mike@quantimo.do
+twitter_username: thinkbynumbers
+github_username: mikepsinn
+remote_theme: mmistakes/so-simple-theme
+locale: en-US
+description: Creating a better world through data.
+baseurl: ''
+url: https://studies.quantimo.do
+logo: "/images/crowdsourcing-utopia-icon-1024-1024.png"
+date_format: "%B %-d, %Y"
+read_time: false
+words_per_minute: 
+mathjax: true
+google_fonts:
+- name: Source Sans Pro
+  weights: 400,400i,700,700i
+- name: Lora
+  weights: 400,400i,700,700i
+google_analytics: UA-39222734-30
+disqus:
+  shortname: journal-of-citizen-science
+twitter:
+  username: quantimodo
+google_site_verification: t2j9fjC_8bPF8oF3d4MwIWzhRfi9FBxV8jEoFo2e8e0
+liquid:
+  error_mode: strict
+permalink: "/:title/"
+markdown: kramdown
+feed:
+  path: atom.xml
+paginate: 10
+paginate_path: "/page:num/"
+search_full_content: false
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+tag_page_layout: tag_page
+tag_page_dir: tag
+plugins:
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-paginate
+- jekyll-redirect-from
+- jekyll-tagging
+author:
+  name: Mike P. Sinn
+  picture: "/images/mike-p-sinn-photo.jpg"
+  email: m@thinkbynumbers.org
+  twitter: thinkbynumbers
+  links:
+  - title: Twitter
+    url: https://twitter.com/thinkbynumbers
+    icon: fab fa-twitter-square
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/mikesinn/
+    icon: fab fa-linkedin
+  - title: GitHub
+    url: https://github.com/mikepsinn
+    icon: fab fa-github-square
+footer_links:
+- title: Twitter
+  url: https://twitter.com/thinkbynumbers
+  icon: fab fa-twitter-square
+- title: LinkedIn
+  url: https://www.linkedin.com/in/mikesinn/
+  icon: fab fa-linkedin
+- title: GitHub
+  url: https://github.com/mikepsinn
+  icon: fab fa-github-square
+- title: Feed
+  url: atom.xml
+  icon: fas fa-rss-square
+- title: Search
+  url: "/search/"
+  icon: fas fa-search
+copyright: ©2019 <a href="https://quantimo.do" rel="nofollow">QuantiModo</a>
+exclude:
+- Gemfile.lock
+- node_modules
+- ".idea"
+include:
+  - _redirects

@@ -1,0 +1,25 @@
+{% if entry.tags.size > 0 %}
+  <ul class="left-col menu">
+    {%- for tag in entry.tags -%}
+      <li>
+        {%- if site.tag_page_dir -%}      
+          <a class="button button--secondary button--pill button--sm" 
+              href="/{{site.tag_page_dir}}/{{ tag | jekyll_tagging_slug }}" 
+              title="{{ site.data.text[site.locale].pages_tagged | default: 'Pages tagged' }} {{ tag }}" 
+              rel="tag">
+              {{ tag }}
+          </a>
+        {%- else if site.tag_archive_path -%}
+          <a class="button button--secondary button--pill button--sm" 
+              href="{{ tag | slugify | prepend: site.tag_archive_path | relative_url }}" 
+              title="{{ site.data.text[site.locale].pages_tagged | default: 'Pages tagged' }} {{ tag }}" 
+              rel="tag">
+              {{ tag }}
+          </a>
+        {%- else -%}
+          {{ tag }}
+        {%- endif -%}
+      </li>
+    {%- endfor- %}
+  </ul>
+{% endif %}

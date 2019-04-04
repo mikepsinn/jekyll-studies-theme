@@ -1,0 +1,25 @@
+# Site navigation links
+
+# TODO:  Figure out how to generate tag and category archive pages
+#- title: Home
+#  url: /
+#- title: Posts
+#  url: /posts/
+# - title: Categories
+#   url: /categories/
+#   fontawesome: tags
+# - title: Variables
+#   url: /tags/
+#   fontawesome: vimeo
+#- title: Personal Studies
+#  url: /personal-studies/
+#- title: Global Studies
+#  url: /global-studies/
+- title: Search
+  url: /search/
+  fontawesome: search
+- title: Create a Study
+  url: https://web.quantimo.do/#/app/study-creation
+  fontawesome: plus
+# - title: External Page
+#   url: https://the-page.com/you-want-to-link-to.html

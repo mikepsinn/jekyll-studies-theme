@@ -1,0 +1,23 @@
+{%- if entry -%}
+    {%- assign cause_variable_svg = entry.cause_variable_svg -%}
+    {%- assign effect_variable_svg = entry.effect_variable_svg -%}
+    {%- assign gauge_png = entry.gauge_png -%}
+{%- else -%}
+    {%- assign cause_variable_svg = page.cause_variable_svg -%}
+    {%- assign effect_variable_svg = page.effect_variable_svg -%}
+    {%- assign gauge_png = page.gauge_png -%}
+{%- endif -%}
+
+<div style="text-align: center;">
+    <div id="gauge-and-images" style="justify-content:space-around;">
+        <div style="display: inline-block; max-width: 10%;"> 
+            <img style="max-width: 100%;" src="{{cause_variable_svg}}" alt="cause image">  
+        </div>
+        <div style="display: inline-block; max-width: 65%;"> 
+            <img style="max-width: 100%; max-height: 200px;" src="{{gauge_png}}" alt="gauge image"> 
+        </div> 
+        <div style="display: inline-block; max-width: 10%;">
+            <img style="max-width: 100%;" src="{{effect_variable_svg}}" alt="effect image"> 
+        </div>
+    </div>
+</div>

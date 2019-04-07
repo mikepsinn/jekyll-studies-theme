@@ -97,6 +97,7 @@
 .site-description {
   // margin-bottom: 1em;
   margin-bottom: 0;
+  margin-top: 0;
   font-family: $description-font-family;
   //@include fluid-type($min-vw, $max-vw, $h5-min, $h5-max);
   font-size: 0.9em;

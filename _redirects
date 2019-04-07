@@ -10,3 +10,6 @@
 # For SEO reasons redirect the default Netlify subdomain to the primary domain
 https://qm-studies.netlify.com/* https://studies.quantimo.do/:splat 301!
 https://master--qm-studies.netlify.com/* https://studies.quantimo.do/:splat 301!
+
+/* 200! Role=admin
+/ /login 404

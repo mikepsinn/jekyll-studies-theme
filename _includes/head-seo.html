@@ -1,1 +1,5 @@
-{% seo %}
+{% if site.allow_indexing %}
+    {% seo %}
+{% else %}
+    <meta name="robots" content="noindex" />
+{% endif %}

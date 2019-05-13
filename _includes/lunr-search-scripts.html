@@ -87,7 +87,10 @@
             })
           });
         resultdiv.empty();
-        resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
+        if(results.length){
+          resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
+        }
+        
         result = result.sort(function(a, b) {
           a = store[a.ref];
           b = store[b.ref];
@@ -118,6 +121,15 @@
             '</article>';
           resultdiv.append(searchItem);
         }
+          var fallback = '<div style="text-align: center;">';
+            fallback += "<p>Don't see what you're looking for?</p>";
+            fallback += '<p>Try an advanced search: </p>';
+            fallback += '<a class="button button--secondary button--pill" href="https://web.quantimo.do/#/app/study-creation" target="_blank">Compare 2 variables by creating a study</a><br><br>';
+            fallback += '<a class="button button--secondary button--pill" href="https://web.quantimo.do/#/app/predictor-search" target="_blank">Search for the top predictors of a specific symptom</a><br><br>';
+            fallback += '<a class="button button--secondary button--pill" href="https://web.quantimo.do/#/app/outcome-search" target="_blank">Search for the top outcomes of a specific factor</a><br><br><br>';
+            fallback += '</div>';
+          resultdiv.append(fallback);
+
       });
     });
   </script>

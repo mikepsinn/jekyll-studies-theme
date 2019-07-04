@@ -74,6 +74,17 @@
       $('input#search').on('keyup', function () {
         var resultdiv = $('#results');
         var query = $(this).val().toLowerCase();
+        var words = query.split(" ");
+        function titleContainsAllWords(study){
+          var title = study.title.toLowerCase();
+          var containsAll = true;
+          words.forEach(function(word){
+            if(title.indexOf(word) === -1){
+              containsAll = false;
+            }
+          });
+          return containsAll;
+        }
         var result =
           idx.query(function (q) {
             query.split(lunr.tokenizer.separator).forEach(function (term) {
@@ -87,13 +98,19 @@
             })
           });
         resultdiv.empty();
-        if(results.length){
+        if(result.length){
           resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
         }
         
         result = result.sort(function(a, b) {
           a = store[a.ref];
+          if(titleContainsAllWords(a)){
+            a.sorting_score *= 10;
+          }
           b = store[b.ref];
+          if(titleContainsAllWords(b)){
+            b.sorting_score *= 10;
+          }
           return (a.sorting_score < b.sorting_score) ? 1 : -1
         });
         for (var item in result) {
